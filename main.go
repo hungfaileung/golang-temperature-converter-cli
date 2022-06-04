@@ -14,8 +14,8 @@ var shouldConvertAgain string
 
 var err error
 
-var errInvalidArguments = errors.New("Invalid arguments")
-var errReadingInput = errors.New("Error reading input")
+var errInvalidArguments = errors.New("invalid arguments")
+var errReadingInput = errors.New("error reading input")
 
 func main() {
 
@@ -23,11 +23,11 @@ func main() {
 		printError(errInvalidArguments)
 	}
 
-	originUnit := strings.ToUpper(os.Args[1])
+	originUnit = strings.ToUpper(os.Args[1])
 
 	for {
 		fmt.Print("What is the current temperature in " + originUnit + " ? ")
-		_, err := fmt.Scanln(&originValue)
+		_, err = fmt.Scanln(&originValue)
 		if err != nil {
 			printError(errReadingInput)
 		}
